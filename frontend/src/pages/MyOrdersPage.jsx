@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const MyOrdersPage = () => {
   const [orders, setOrders] = useState([]);
+  const navigate = useNavigate();
+  const handleRowClick = (orderId) => {
+    navigate(`/order/${orderId}`);
+  };
 
   useEffect(() => {
     //Simulate fetching orders
@@ -59,6 +64,7 @@ const MyOrdersPage = () => {
             {orders.length > 0 ? (
               orders.map((order) => (
                 <tr
+                  onClick={() => handleRowClick(order._id)}
                   key={order._id}
                   className="border-b hover:border-gray-50 cursor-pointer"
                 >
