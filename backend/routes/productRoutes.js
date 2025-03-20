@@ -265,7 +265,7 @@ router.get("/best-seller", async (req, res) => {
 });
 
 //@route GET api/products/new-arrivals
-//@desc Retrieve latest 8 products -Creation Date
+//@desc Retrieve latest 8 products - Creation Date
 //@access Public
 
 router.get("/new-arrivals", async (req, res) => {
